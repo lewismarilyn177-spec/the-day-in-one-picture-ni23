@@ -165,10 +165,15 @@ ticks = [
     "NATO: RUSSIA NUCLEAR SATELLITE WARNING",
     "US DEMS: BIGGEST HOUSE WIN SINCE 1992",
 ]
-yy = 992
+yy = 986
 d.text((24, yy), ticks[0], font=f_tick, fill=(238,232,220), anchor="lm")
-d.text((24, yy+24), " · ".join(ticks[1:3]), font=font(SANS_B, 17), fill=(200,206,216), anchor="lm")
-d.text((24, yy+46), ticks[3] + "  ·  VESSEL ATTACKS GULF OF FINLAND", font=font(SANS_B, 17), fill=(200,206,216), anchor="lm")
+line2 = " · ".join(ticks[1:4])
+f2 = font(SANS_B, 15)
+for sz in range(15, 9, -1):
+    f2 = font(SANS_B, sz)
+    if d.textlength(line2, font=f2) <= 976:
+        break
+d.text((24, yy+20), line2, font=f2, fill=(200,206,216), anchor="lm")
 
 # footer date check
 d.rectangle([0, 1016, W, 1024], fill=RED)

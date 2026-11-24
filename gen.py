@@ -114,13 +114,13 @@ d.text((30, hy0+18), "LIBYA  ·  AP · AL JAZEERA · GUARDIAN  ·  NOV 23", font
 cy0, cy1 = 736, 930
 cw = (W - 4*28) // 3
 xs = [28, 28 + cw + 28, 28 + 2*(cw + 28)]
-f_head = font(SANS_B, 22)
+f_head = font(SANS_B, 21)
 f_sub  = font(SANS, 15)
 
 cards = [
     ("EU 22ND SANCTIONS", "ON RUSSIA", "banks, crypto, sports ban"),
     ("IRAN VS BLOCKADE", "“ALL AVAILABLE MEANS”", "Houthis hit Saudi refinery"),
-    ("COP31: NO DEAL", "SUMMIT CLOSES EMPTY", "Guterres “deeply disappointed”"),
+    ("COP31: NO DEAL", "SUMMIT ENDS EMPTY", "Guterres “deeply disappointed”"),
 ]
 
 for i, ((t1, t2, sub), x) in enumerate(zip(cards, xs)):
@@ -152,7 +152,7 @@ for i, ((t1, t2, sub), x) in enumerate(zip(cards, xs)):
         d.text((ix+64, iy), "×", font=font(SANS_B, 40), fill=RED, anchor="lm")
     d.text((x+16, cy0+118), t1, font=f_head, fill=RED, anchor="la")
     d.text((x+16, cy0+146), t2, font=f_head, fill=INK, anchor="la")
-    d.text((x+16, cy0+172), sub, font=f_sub, fill=(90,96,108), anchor="la")
+    d.text((x+16, cy0+166), sub, font=f_sub, fill=(90,96,108), anchor="la")
 
 # ---------------- ticker (y 950..1024) ----------------
 d.rectangle([0, 950, W, 1024], fill=INK)
